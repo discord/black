@@ -232,7 +232,7 @@ def normalize_string_quotes(s: str) -> str:
     if new_escape_count > orig_escape_count:
         return s  # Do not introduce more escaping
 
-    if new_escape_count == orig_escape_count and orig_quote == '"':
-        return s  # Prefer double quotes
+    if new_escape_count == orig_escape_count and orig_quote == "'":
+        return s  # Prefer single quotes
 
     return f"{prefix}{new_quote}{new_body}{new_quote}"
