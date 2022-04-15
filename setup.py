@@ -66,7 +66,9 @@ setup(
     python_requires=">=3.6",
     zip_safe=False,
     install_requires=[
-        "click>=6.5",
+        # Click 8.1 removed an internal module that black was incorrectly importing.
+        # Some usages can't upgrade black so limit the version here.
+        "click>=6.5,<8.1.0",
         "attrs>=18.1.0",
         "appdirs",
         "toml>=0.9.4",
